@@ -1,0 +1,174 @@
+{
+  "meta": {
+    "project": "Biomedical System Design Capsule - ML Lab 1",
+    "student": "Burak Bekir Çakırer",
+    "student_id": "2211011008",
+    "seed": 42,
+    "test_fraction": 0.2,
+    "python": "3.13.5",
+    "scikit_learn": "1.8.0",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.8"
+  },
+  "regression": {
+    "dataset": "scikit-learn diabetes",
+    "n": 442,
+    "n_train": 353,
+    "n_test": 89,
+    "features": [
+      "bmi",
+      "bp"
+    ],
+    "target": "one-year disease progression score",
+    "raw_coef": {
+      "bmi": 9.048446341939883,
+      "bp": 1.3545938585945174
+    },
+    "raw_intercept": -215.05280807560726,
+    "test": {
+      "mae": 50.044114874192104,
+      "mse": 3740.5070199204715,
+      "rmse": 61.159684596312886,
+      "r2": 0.2939977566766082
+    },
+    "scaled_coef": {
+      "bmi": 39.63227704549646,
+      "bp": 19.0430445911328
+    },
+    "scaled_intercept": 153.73654390934846,
+    "scaled_test": {
+      "mae": 50.044114874192104,
+      "mse": 3740.5070199204706,
+      "r2": 0.2939977566766083
+    },
+    "raw_feature_training_mean": {
+      "bmi": 26.53682719546742,
+      "bp": 94.98957507082153
+    },
+    "raw_feature_training_std": {
+      "bmi": 4.38000906982223,
+      "bp": 14.058121163262356
+    },
+    "max_prediction_difference_scaled_unscaled": 5.684341886080802e-14,
+    "gd": {
+      "objective": "J(theta)=sum_i(yhat_i-ycenter_i)^2/(2*n)",
+      "n_iterations": 150,
+      "min_train_loss": 1773.9289268706077,
+      "learning_rates": {
+        "0.01": {
+          "loss_first": 3004.19144175345,
+          "loss_10": 2737.028521149795,
+          "loss_50": 2103.612064165746,
+          "loss_final": 1802.0772486953695,
+          "first_iteration_within_1pct_of_optimum": null
+        },
+        "0.1": {
+          "loss_first": 2719.3329466401387,
+          "loss_10": 1851.882746162603,
+          "loss_50": 1774.0534406721376,
+          "loss_final": 1773.9289273350419,
+          "first_iteration_within_1pct_of_optimum": 17
+        },
+        "0.8": {
+          "loss_first": 1806.978196607243,
+          "loss_10": 1773.9290393714327,
+          "loss_50": 1773.9289268706077,
+          "loss_final": 1773.9289268706077,
+          "first_iteration_within_1pct_of_optimum": 2
+        },
+        "1.5": {
+          "loss_first": 3204.111867205852,
+          "loss_10": 8682.605778636633,
+          "loss_50": 7589896.766890919,
+          "loss_final": 303377268030131.9,
+          "first_iteration_within_1pct_of_optimum": null
+        }
+      }
+    }
+  },
+  "classification": {
+    "dataset": "Wisconsin diagnostic breast cancer",
+    "n": 569,
+    "n_train": 455,
+    "n_test": 114,
+    "n_malignant": 212,
+    "n_benign": 357,
+    "features": [
+      "worst radius",
+      "worst concave points"
+    ],
+    "class_encoding": {
+      "malignant": 1,
+      "benign": 0
+    },
+    "standardized_coef": {
+      "worst radius": 3.268541936835328,
+      "worst concave points": 2.31133087848528
+    },
+    "intercept": -0.8350691890014131,
+    "test_at_0_5": {
+      "threshold": 0.5,
+      "accuracy": 0.956140350877193,
+      "precision": 0.9743589743589743,
+      "recall": 0.9047619047619048,
+      "f1": 0.9382716049382716,
+      "tn": 71,
+      "fp": 1,
+      "fn": 4,
+      "tp": 38
+    },
+    "thresholds": [
+      {
+        "threshold": 0.3,
+        "accuracy": 0.9736842105263158,
+        "precision": 0.9333333333333333,
+        "recall": 1.0,
+        "f1": 0.9655172413793104,
+        "tn": 69,
+        "fp": 3,
+        "fn": 0,
+        "tp": 42
+      },
+      {
+        "threshold": 0.5,
+        "accuracy": 0.956140350877193,
+        "precision": 0.9743589743589743,
+        "recall": 0.9047619047619048,
+        "f1": 0.9382716049382716,
+        "tn": 71,
+        "fp": 1,
+        "fn": 4,
+        "tp": 38
+      },
+      {
+        "threshold": 0.7,
+        "accuracy": 0.9298245614035088,
+        "precision": 1.0,
+        "recall": 0.8095238095238095,
+        "f1": 0.8947368421052632,
+        "tn": 72,
+        "fp": 0,
+        "fn": 8,
+        "tp": 34
+      }
+    ],
+    "one_feature_test_at_0_5": {
+      "threshold": 0.5,
+      "accuracy": 0.9035087719298246,
+      "precision": 0.9428571428571428,
+      "recall": 0.7857142857142857,
+      "f1": 0.8571428571428571,
+      "tn": 70,
+      "fp": 2,
+      "fn": 9,
+      "tp": 33
+    },
+    "logistic_settings": {
+      "C": 1.0,
+      "solver": "lbfgs",
+      "max_iter": 2000,
+      "class_weight": null
+    }
+  }
+}
