@@ -49,6 +49,8 @@
 \IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
 \makesavenoteenv{longtable}
 \usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{float}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
 \def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
@@ -178,6 +180,18 @@ figures, and machine-readable result tables. \textbf{No implementation
 code is included in this report.} For a different environment, numerical
 differences may occur from library versions.
 
+\subsection*{GitHub Repository and Reproduction}
+
+The complete project repository (including the source code, dataset split
+records, generated figures, and machine-readable metrics) is available at:
+\begin{center}
+\url{https://github.com/burakcakirer/Biomedical_ML_Lab1}
+\end{center}
+This URL links to supplementary reproducibility files. Source code is
+provided in the repository, not reproduced within this report. The official
+assignment requires submission of a single PDF report; the repository is
+provided as an additional resource.
+
 \section{2. Part A --- Dataset Selection and
 Exploration}\label{part-a-dataset-selection-and-exploration}
 
@@ -201,9 +215,9 @@ original (not library-standardized) feature values, making coefficient
 units interpretable. No missing-value imputation was necessary; the
 model uses the numeric feature values as provided.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.94\textwidth,height=\textheight]{figures/fig01_diabetes_exploration.png}
+\includegraphics[width=0.94\textwidth,height=0.34\textheight]{figures/fig01_diabetes_exploration.png}
 \caption{Exploratory relationships of BMI and average blood
 pressure with the continuous disease-progression target. Wide scatter
 indicates that two predictors cannot explain all variation.}
@@ -240,9 +254,9 @@ on training samples only. This dataset is suitable for logistic
 regression because the outcome is binary and both selected predictors
 are numerical.
 
-\begin{figure}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.86\textwidth,height=\textheight]{figures/fig05_breast_cancer_exploration.png}
+\includegraphics[width=0.86\textwidth,height=0.34\textheight]{figures/fig05_breast_cancer_exploration.png}
 \caption{Distribution of the 569 diagnostic records across the
 two input features. The partially overlapping regions motivate
 probabilistic classification.}
@@ -298,9 +312,9 @@ Root mean squared error (RMSE; additional context) & 61.160 \\
 Coefficient of determination (R\textsuperscript{2}) & 0.294 \\
 \end{longtable}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.77\textwidth,height=\textheight]{figures/fig02_regression_actual_predicted.png}
+\includegraphics[width=0.77\textwidth,height=0.34\textheight]{figures/fig02_regression_actual_predicted.png}
 \caption{Actual versus predicted progression scores on the 89
 held-out diabetes observations. The dashed diagonal denotes perfect
 predictions.}
@@ -339,9 +353,9 @@ Test MAE & 50.044 & 50.044 \\
 Test R\textsuperscript{2} & 0.294 & 0.294 \\
 \end{longtable}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.94\textwidth,height=\textheight]{figures/fig03_scaling_comparison.png}
+\includegraphics[width=0.94\textwidth,height=0.34\textheight]{figures/fig03_scaling_comparison.png}
 \caption{Baseline versus standardized OLS: identical test MAE,
 despite changed coefficient scales. Coefficient groups use different
 units and must not be compared directly.}
@@ -394,9 +408,9 @@ First within 1\% of optimum
 1.50 & 8682.6 & 3.03e+14 & Diverges \\
 \end{longtable}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.91\textwidth,height=\textheight]{figures/fig04_learning_rate_convergence.png}
+\includegraphics[width=0.91\textwidth,height=0.34\textheight]{figures/fig04_learning_rate_convergence.png}
 \caption{Training loss versus iteration for four learning
 rates, shown on a log scale. $\eta$ = 0.80 converges rapidly; $\eta$ = 1.50
 diverges.}
@@ -462,9 +476,9 @@ False negative / true positive & 4 / 38 \\
 \end{longtable}
 
 \clearpage
-\begin{figure}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.75\textwidth,height=0.45\textheight,keepaspectratio]{figures/fig06_confusion_matrix.png}
+\includegraphics[width=0.75\textwidth,height=0.34\textheight,keepaspectratio]{figures/fig06_confusion_matrix.png}
 \caption{Confusion matrix on the 114 held-out diagnostic
 observations at threshold 0.5. Rows indicate actual diagnoses and
 columns indicate predicted classes.}
@@ -501,9 +515,9 @@ Threshold & Accuracy & Precision & Recall & F1 & FP & FN \\
 0.7 & 0.930 & 1.000 & 0.810 & 0.895 & 0 & 8 \\
 \end{longtable}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.81\textwidth,height=\textheight]{figures/fig07_thresholds.png}
+\includegraphics[width=0.81\textwidth,height=0.34\textheight]{figures/fig07_thresholds.png}
 \caption{Precision and recall evaluated on identical test
 probabilities for three thresholds. A lower threshold emphasizes
 sensitivity; a higher threshold emphasizes precision.}
@@ -543,17 +557,17 @@ F1-score & 0.857 & 0.938 \\
 False negatives & 9 & 4 \\
 \end{longtable}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.91\textwidth,height=\textheight]{figures/fig08_decision_boundary.png}
+\includegraphics[width=0.85\textwidth,height=0.34\textheight,keepaspectratio]{figures/fig08_decision_boundary.png}
 \caption{Two-feature logistic decision boundary (dark line at
 predicted probability 0.5) and held-out records in training-standardized
 coordinates. Black rings mark test misclassifications.}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
-\includegraphics[width=0.91\textwidth,height=\textheight]{figures/fig09_one_vs_two_features.png}
+\includegraphics[width=0.91\textwidth,height=0.34\textheight]{figures/fig09_one_vs_two_features.png}
 \caption{Classification accuracy and malignant recall using
 one feature versus both features on the identical held-out partition.}
 \end{figure}

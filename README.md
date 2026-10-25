@@ -161,3 +161,8 @@ For a quick run without a virtual environment: `py -m pip install -r requirement
 4. scikit-learn documentation: [`load_diabetes`](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_diabetes.html) · [`load_breast_cancer`](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_breast_cancer.html)
 
 The full bibliography, dataset provenance, and experimental discussion are in the [report](report/Biomedical_ML_Lab1_Report.pdf).
+
+
+## Report and GitHub reference
+
+The report (`report/Biomedical_ML_Lab1_Report.pdf`, with editable DOCX and `main.tex`) includes the project repository URL: https://github.com/burakcakirer/Biomedical_ML_Lab1. The PDF is the assignment submission file; the code and generated outputs are supplementary materials.
